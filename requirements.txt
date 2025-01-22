@@ -1,0 +1,13 @@
+# requirements.txt file
+pandas
+numpy
+matplotlib
+seaborn 
+scikit-learn
+jupyter
+ipykernel
+flask
+request
+jsonify
+render_template
+streamlit
