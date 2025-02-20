@@ -7,7 +7,6 @@ scikit-learn
 jupyter
 ipykernel
 flask
-request
+requests
 jsonify
-render_template
 streamlit
