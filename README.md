@@ -154,7 +154,7 @@ These insights from EDA were crucial in guiding the feature engineering process 
 
 The final model was deployed on **Streamlit Cloud** to allow users to input car features and predict the market price. The application is user-friendly and provides real-time predictions.
 
-### Link to Application: [Streamlit Model Deployment](https://your-streamlit-link.com)
+### Link to Application: [Streamlit Model Deployment](https://car-price-predection-dx2zae5hc3xqh7uydgpnh8.streamlit.app/)
 
 ---
 
