@@ -1,24 +1,28 @@
+Here's the updated **README** file with the **Hyperparameter Tuning** and the addition of **Decision Tree** and **Random Forest** models in the **Problem Workflow**:
+
+---
+
 # Car Market Analysis and Price Prediction
 
 ## Problem Statement
 
-A car company is expanding into the USA market and aims to predict car prices based on various factors like car features, specifications, and brand reputation. To solve this problem, we built a machine learning pipeline using exploratory data analysis (EDA), feature engineering, and model selection to develop a price prediction model. The model was deployed on Streamlit Cloud for easy access and use. We began with a Linear Regression model, then improved the model using various techniques such as L1 (Lasso), L2 (Ridge), SVM (Support Vector Machine), and ensemble methods to achieve a significant accuracy improvement.
+A car company is expanding into the USA market and aims to predict car prices based on various factors like car features, specifications, and brand reputation. To solve this problem, we built a machine learning pipeline using exploratory data analysis (EDA), feature engineering, and model selection to develop a price prediction model. The model was deployed on Streamlit Cloud for easy access and use. We began with a Linear Regression model, then improved the model using various techniques such as L1 (Lasso), L2 (Ridge), SVM (Support Vector Machine), Decision Tree, Random Forest, and ensemble methods to achieve a significant accuracy improvement.
 
-The final model achieved an accuracy improvement from 80% to 91%, showing the power of advanced feature engineering and model selection in predicting car prices effectively.
+The final model achieved an accuracy improvement from 80% to 91%, showing the power of advanced feature engineering, model selection, and hyperparameter tuning in predicting car prices effectively.
 
 ## Technologies Used
 
-- **Machine Learning**: Linear Regression, Lasso (L1), Ridge (L2), SVM, Ensemble methods
+- **Machine Learning**: Linear Regression, Lasso (L1), Ridge (L2), SVM, Decision Tree, Random Forest, Ensemble methods
 - **Data Analysis**: Python, Pandas, Numpy, Matplotlib, Seaborn
 - **Model Deployment**: Streamlit
 - **Libraries**: Scikit-learn, XGBoost, LightGBM, etc.
 
 ## Problem Workflow
 
-1. **Data Preprocessing**: 
+1. **Data Preprocessing**:
    - Clean the data to handle missing values, outliers, and categorical variables.
    - Normalize or scale numerical features for better model performance.
-   
+
 2. **Exploratory Data Analysis (EDA)**:
    - Analyze trends, relationships, and patterns in the dataset using visualization tools.
    - Identify important features that influence car pricing.
@@ -28,16 +32,21 @@ The final model achieved an accuracy improvement from 80% to 91%, showing the po
    - Select the most important features using feature importance techniques.
 
 4. **Model Selection and Benchmarking**:
-   - Start with Linear Regression as a baseline model.
+   - Start with **Linear Regression** as a baseline model.
+   - Add **Decision Tree** and **Random Forest** models to the pipeline for more complex decision-making.
    - Compare model performance using evaluation metrics (e.g., R-squared, MAE, MSE).
-   
-5. **Improvement of Model Performance**:
-   - Use L1 (Lasso) and L2 (Ridge) regularization techniques to prevent overfitting.
-   - Apply Support Vector Machines (SVM) for more complex decision boundaries.
-   - Implement ensemble methods like XGBoost, LightGBM to increase accuracy.
 
-6. **Deployment**:
-   - Deploy the model using Streamlit Cloud for easy user interaction and real-time prediction.
+5. **Hyperparameter Tuning**:
+   - Use techniques like **Grid Search** and **Random Search** to fine-tune the hyperparameters of models such as Decision Tree, Random Forest, and other selected algorithms to improve performance.
+   - Hyperparameters tuned include tree depth, number of estimators, learning rate, etc.
+
+6. **Improvement of Model Performance**:
+   - Apply **L1 (Lasso)** and **L2 (Ridge)** regularization techniques to prevent overfitting.
+   - Use **SVM** to model complex, non-linear relationships.
+   - Implement ensemble methods like **XGBoost**, **LightGBM** to combine weaker models for higher accuracy.
+
+7. **Deployment**:
+   - Deploy the model using **Streamlit Cloud** for easy user interaction and real-time prediction.
 
 ## Data Dictionary
 
@@ -75,10 +84,66 @@ The final model achieved an accuracy improvement from 80% to 91%, showing the po
 The following models were tested:
 
 1. **Linear Regression**: Initial baseline model, providing 80% accuracy.
-2. **L1 (Lasso)**: Regularization technique used to reduce overfitting and improve model generalization.
-3. **L2 (Ridge)**: Another regularization technique to penalize large coefficients and prevent overfitting.
-4. **SVM**: A more advanced model for predicting non-linear relationships, improving accuracy.
-5. **Ensemble Methods**: Techniques like XGBoost and LightGBM were used to combine predictions of weaker models and boost performance, increasing the accuracy to 91%.
+2. **Decision Tree**: A tree-based algorithm that splits data based on feature values to make predictions.
+3. **Random Forest**: An ensemble of Decision Trees that aggregates predictions for better accuracy.
+4. **L1 (Lasso)**: Regularization technique used to reduce overfitting and improve model generalization.
+5. **L2 (Ridge)**: Another regularization technique to penalize large coefficients and prevent overfitting.
+6. **SVM**: A more advanced model for predicting non-linear relationships, improving accuracy.
+7. **Ensemble Methods**: Techniques like XGBoost and LightGBM were used to combine predictions of weaker models and boost performance, increasing the accuracy to 91%.
+
+## Hyperparameter Tuning
+
+To improve the model's performance, hyperparameter tuning was performed using techniques like **Grid Search** and **Random Search**. Key hyperparameters tuned include:
+
+- **Decision Tree**:
+  - Maximum depth of the tree (`max_depth`)
+  - Minimum samples required to split a node (`min_samples_split`)
+  - Minimum samples required at each leaf node (`min_samples_leaf`)
+
+- **Random Forest**:
+  - Number of trees in the forest (`n_estimators`)
+  - Maximum depth of the trees (`max_depth`)
+  - Minimum samples required to split a node (`min_samples_split`)
+
+- **SVM**:
+  - Regularization parameter (`C`)
+  - Kernel type (`kernel`)
+  - Gamma parameter for non-linear kernels (`gamma`)
+
+- **Ensemble Methods (XGBoost, LightGBM)**:
+  - Learning rate (`learning_rate`)
+  - Number of estimators (`n_estimators`)
+  - Maximum depth (`max_depth`)
+  - Subsample ratio (`subsample`)
+
+By performing hyperparameter tuning, we were able to find the best set of parameters for each model, leading to improved accuracy and better performance.
+
+## Conclusion: Exploratory Data Analysis (EDA)
+
+Through the EDA process, several key insights were gained that helped shape the understanding of the relationships between features and car prices:
+
+1. **Engine Size and Price**:
+   - There is a strong positive correlation (0.9) between engine size and price. Larger engine sizes typically lead to higher prices, emphasizing the importance of engine specifications in determining a car's value.
+
+2. **Fuel Efficiency**:
+   - Diesel cars generally exhibit better fuel efficiency than gasoline cars, making them a more economical choice for long-distance travel. This insight is valuable when considering both price and operating costs for different types of vehicles.
+
+3. **Horsepower and City Mileage**:
+   - A negative correlation (-0.7) was observed between horsepower and city mileage. Cars with higher horsepower tend to have lower fuel efficiency in city driving conditions, highlighting the trade-off between performance and fuel economy.
+
+4. **Drivewheel Configuration**:
+   - Sedans are more likely to feature front-wheel drive compared to Hardtops, suggesting that sedans prioritize practicality and efficiency, which can impact their pricing and consumer preference.
+
+5. **Weight and Acceleration**:
+   - There is a significant negative correlation (-0.8) between a car's weight and its acceleration. Heavier cars generally accelerate slower, which can influence the car's market position, especially for those seeking higher performance.
+
+6. **Car Body and Price**:
+   - Convertibles tend to be associated with the highest prices among car body types. This is likely due to their appeal as luxury vehicles and their design, which influences their higher market value.
+
+7. **Engine Type and Price**:
+   - The type of engine in a car significantly influences its price. Specifically, OHV (Overhead Valve) engines have the most significant impact on price increases, underlining how engine technology affects a car's cost.
+
+These insights from EDA were crucial in guiding the feature engineering process and refining the models to predict car prices more accurately.
 
 ## Results
 
@@ -95,5 +160,5 @@ The final model was deployed on **Streamlit Cloud** to allow users to input car 
 
 ## Conclusion
 
-Through extensive model selection and feature engineering, we have developed a robust car price prediction model. By implementing various techniques like Lasso, Ridge, SVM, and ensemble methods, we achieved a significant increase in accuracy, moving from 80% to 91%. The model is now deployed and available for use via Streamlit Cloud. 
+Through extensive model selection, hyperparameter tuning, and feature engineering, we have developed a robust car price prediction model. By implementing various techniques like Lasso, Ridge, SVM, Decision Trees, Random Forests, and ensemble methods, we achieved a significant increase in accuracy, moving from 80% to 91%. The model is now deployed and available for use via Streamlit Cloud. 
 
